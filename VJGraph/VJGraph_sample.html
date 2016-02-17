@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!DOCTYPE html> 
+<html>
+<head>
+<title>VJ Graph sample</title>
+</head>
+<body>
+
+	<div id="graphWrapper" style="border:solid black 1px;"></div>
+	<div id="graphWrapper2" style="border:solid black 1px;"></div>
+
+<!--script src="http://vanilla-javascript-library.googlecode.com/svn/trunk/VJGraph/VJGraph.js"></script-->
+<script src="./VJGraph.js"></script>
+<script>
+	VJ.graph("graphWrapper", [100, 200, 300, 400], {max:500, width:300, height:150, dataLength: 100});
+	VJ.graph("graphWrapper2", [[100, 200, 300, 400], [300, 400, 200, 100]], {max:500, width:300, height:150, dataLength:20});
+	setInterval(function () {
+		VJ.graph("graphWrapper").appendData([Math.random() * 400]);
+		VJ.graph("graphWrapper2").appendData([Math.random() * 400, Math.random() * 400]);
+	}, 100);
+</script>
+</body>
+</html>
